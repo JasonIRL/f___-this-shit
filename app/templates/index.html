@@ -1,0 +1,81 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@2.1.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon.ico') }}">
+    <title>FUCK</title>
+</head>
+
+<body>
+    <div>
+        <header class>
+            <div class="container">
+                <div class="nav-brand">
+                    <h1 class="nes-text is-success">FUCK THIS SHIT</h1>
+                    <p class="nes-text is-primary">Shout your grievances into the void.</p>
+                    <p class="nes-text is-error">It won't solve your problem,<br>but it might make you feel better...
+                    </p>
+                </div>
+            </div>
+        </header>
+        <br>
+        <div class="container">
+            <main class="main-content">
+                <section class="topic">
+                    <h2 class="nes-text is-error">
+                        Rules
+                    </h2>
+                    <ul>
+                        <li>No Racism</li>
+                        <li>No Personal Attacks</li>
+                        <li>No Identifiable Information</li>
+                    </ul>
+                </section>
+                <br>
+                <section class="topic">
+                    <section class="nes-container with-title">
+                        <h3 class="title">What's Pissing You Off?</h3>
+                        <div class="item">
+                            <form id="gripes" method="POST">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                                <div class="nes-field is-inline">
+                                    <input type="text" name="gripe" class="nes-input">
+                                    <button type="submit" class="nes-btn is-success">FUCK!</button>
+                                </div>
+                                <small>128 Character max, How fuckin mad are you?</small>
+                            </form>
+                        </div>
+                    </section>
+                    <br>
+                    <section class="nes-container with-title is-dark">
+                        <h3 class="title">The Void</h3>
+                        <div class="nes-table-responsive">
+                            <table class="nes-table is-bordered is-centered">
+                                <thead>
+                                    <tr>
+                                        <th class="nes-text is-primary">What Was Said</th>
+                                        <th class="nes-text is-error">When It Was Said</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for shit in bullshit %}
+                                    <tr>
+                                        <td>{{ shit[0] }}</td>
+                                        <td>{{ shit[1] }} UTC</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+<br>
+<footer>
+    <small>Built with spite and malice</small><br>
+    <small>Problems? I really don't fucking care. Shout them to the void.</small>
+</footer>
