@@ -6,7 +6,7 @@ f___-this-shit
 Code repo for the website http://fuck-this-shit.club
 
 .. |license| image:: https://img.shields.io/badge/license-YOLO-brightgreen.svg
-.. |size| image:: https://img.shields.io/github/repo-size/JasonIRL/bad-flask-app.svg?style=popout
+.. |size| image:: https://img.shields.io/github/repo-size/JasonIRL/f___-this-shit.svg?style=popout
 
 Requirements
 ------------
