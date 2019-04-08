@@ -18,7 +18,7 @@ def index():
     if request.method == "POST":
         form = request.form
         new_bullshit = Stupid(
-            text=form["gripe"], timestamp=datetime.utcnow().isoformat()
+            text=(form["gripe"]).upper(), timestamp=datetime.utcnow().isoformat()
         )
         db.session.add(new_bullshit)
         db.session.commit()
